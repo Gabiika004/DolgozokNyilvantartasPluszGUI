@@ -1,0 +1,41 @@
+﻿<Window x:Class="DolgozokGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DolgozokGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- CRUD Gombok -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+            <Button Content="Új Dolgozó" Margin="5" Padding="10" Background="LightGreen" Click="Add_Click"/>
+            <Button Content="Módosítás" Margin="5" Padding="10" Background="LightBlue" Click="Edit_Click"/>
+            <Button Content="Törlés" Margin="5" Padding="10" Background="Salmon" Click="Delete_Click"/>
+            <Button Content="Frissítés" Margin="5" Padding="10" Background="LightYellow" Click="Refresh_Click"/>
+        </StackPanel>
+
+        <!-- Dolgozók Listája -->
+        <DataGrid Grid.Row="1" x:Name="dgDolgozok" AutoGenerateColumns="False" CanUserAddRows="False" Margin="0,0,0,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"/>
+                <DataGridTextColumn Header="Név" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Fizetés" Binding="{Binding Salary}" Width="*"/>
+                <DataGridTextColumn Header="Pozíció" Binding="{Binding Position}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Státusz sáv -->
+        <StatusBar Grid.Row="2" Background="LightGray" Foreground="Black">
+            <StatusBarItem Content="Kész"/>
+        </StatusBar>
+    </Grid>
+</Window>

@@ -1,0 +1,51 @@
+﻿<Window x:Class="DolgozokGUI.Views.NewDolgozo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DolgozokGUI.Views"
+        mc:Ignorable="d"
+        Title="NewDolgozo" Height="300" Width="400">
+    <Grid Margin="10">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/> 
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0" Grid.ColumnSpan="2" Content="Név:"/>
+        <TextBox Grid.Row="1" Grid.ColumnSpan="2" x:Name="txtName" Margin="0,5"/>
+
+        <Label Grid.Row="2" Content="Fizetés:" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Row="3" x:Name="txtSalary" Margin="0,5" Grid.ColumnSpan="2"/>
+
+        <Label Grid.Row="4" Content="Pozíció:" Grid.ColumnSpan="2"/>
+        <TextBox Grid.Row="5" x:Name="txtPosition" Margin="0,5" Grid.ColumnSpan="2"/>
+
+        <Button Content="Mégse" 
+                Grid.Row="6"
+                Grid.Column="1"
+                Padding="10,5" 
+                Click="Cancel_Click" 
+                Margin="3"
+                Background="Tomato"/>
+
+        <Button Content="Mentés" 
+                Grid.Row="6"
+                Grid.Column="0"
+                Padding="10,5" 
+                Click="Save_Click" 
+                Margin="3"
+                Background="LightGreen"/>
+    </Grid>
+</Window>
